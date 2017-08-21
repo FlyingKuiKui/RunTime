@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741064101F4B064400757473 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410640F1F4B064400757473 /* ExchangeViewController.m */; };
 		742BDD211F417BA4003FF30C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 742BDD201F417BA4003FF30C /* main.m */; };
 		742BDD241F417BA4003FF30C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 742BDD231F417BA4003FF30C /* AppDelegate.m */; };
 		742BDD271F417BA4003FF30C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 742BDD261F417BA4003FF30C /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7410640E1F4B064400757473 /* ExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeViewController.h; sourceTree = "<group>"; };
+		7410640F1F4B064400757473 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
 		742BDD1C1F417BA4003FF30C /* RunTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742BDD201F417BA4003FF30C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		742BDD221F417BA4003FF30C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				742BDD231F417BA4003FF30C /* AppDelegate.m */,
 				742BDD251F417BA4003FF30C /* ViewController.h */,
 				742BDD261F417BA4003FF30C /* ViewController.m */,
+				7410640E1F4B064400757473 /* ExchangeViewController.h */,
+				7410640F1F4B064400757473 /* ExchangeViewController.m */,
 				742BDD521F431FE1003FF30C /* Person.h */,
 				742BDD531F431FE1003FF30C /* Person.m */,
 				742BDD281F417BA4003FF30C /* Main.storyboard */,
@@ -284,6 +289,7 @@
 				742BDD271F417BA4003FF30C /* ViewController.m in Sources */,
 				742BDD241F417BA4003FF30C /* AppDelegate.m in Sources */,
 				742BDD541F431FE1003FF30C /* Person.m in Sources */,
+				741064101F4B064400757473 /* ExchangeViewController.m in Sources */,
 				742BDD211F417BA4003FF30C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEVELOPMENT_TEAM = J9WL29R87J;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = RunTime/Info.plist;
@@ -446,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEVELOPMENT_TEAM = J9WL29R87J;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = RunTime/Info.plist;

@@ -12,4 +12,12 @@
 - (void)sayHello{
     NSLog(@"Hello");
 }
+- (void)sayMessage:(NSString *)message{
+    NSLog(@"%@",message);
+}
+- (void)sayMessage:(NSString *)message WithBool:(BOOL)isBool{
+    if (isBool) {
+        NSLog(@"%@",message);
+    }
+}
 @end

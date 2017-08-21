@@ -10,4 +10,7 @@
 
 @interface Person : NSObject
 - (void)sayHello;
+- (void)sayMessage:(NSString *)message;
+- (void)sayMessage:(NSString *)message WithBool:(BOOL)isBool;
+
 @end

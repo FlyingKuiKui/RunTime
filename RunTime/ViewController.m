@@ -8,9 +8,8 @@
 
 #import "ViewController.h"
 #import "Person.h"
-
 #import <objc/message.h>  // 导入此框架，验证消息发送机制
-#import <objc/runtime.h>  // 导入此框架，验证
+#import "ExchangeViewController.h"
 @interface ViewController ()
 
 @end
@@ -19,35 +18,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 验证消息发送机制
+    NSLog(@"----验证消息发送机制-开始----");
     /*
-     Runtime是运行时机制，是一套纯C的代码库，是OC的幕后工作者，整个OC的底层，我们编写的OC代码，在程序运行的时候，都经过Runtime机制转译成了C语言代码
+        Runtime是运行时机制，是一套纯C的代码库，是OC的幕后工作者，整个OC的底层，我们编写的OC代码，在程序运行的时候，都经过Runtime机制转译成了C语言代码。
+        Runtime是运行时机制，其中最主要的是消息机制。
+        对于C语言而言，函数的调用在编译的时候决定调用哪个函数；
+        而对于OC而言，并不会在编译的时候真正决定调用哪个函数，只有在真正调用的时候，才会根据函数的名称找到对应的函数来调用。
+        在编译阶段，OC可以调用任何已声明的函数，至于函数是否实现，并不重要。
+        在编译阶段，C调用未实现的函数，将会报错
      */
+    
+    // OC调用示例：
+    [self exampleTransferWithOC];
+    // 消息发送机制示例：
+    objc_msgSend(self, @selector(exampleTransferWithOC));
+    // 该行代码经过runtime就编译成了objc_msgSend(self,@selector(exampleTransferWithOC)); 向self发送exampleTransferWithOC方法
+    NSLog(@"------分隔线--------");
+    [self exampleTransferWithmsgSend];
+    objc_msgSend(self, @selector(exampleTransferWithmsgSend));
+    NSLog(@"------分隔线--------");
+    // 验证
+    [self otherTest];
+    NSLog(@"----验证消息发送机制-结束----");
+}
+
+- (void)exampleTransferWithOC{
     Person *per = [[Person alloc]init];
-    //    [per sayHello];
-    // 该行代码经过runtime就编译成了objc_msgSend(per,@selector(sayHello)); 向per发送sayHello方法
+    [per sayHello];
+    [per sayMessage:@"说句话听听"];
+}
+- (void)exampleTransferWithmsgSend{
+    id object = objc_msgSend([Person class], @selector(alloc));
+    Person *per = objc_msgSend(object, @selector(init));
     objc_msgSend(per,@selector(sayHello));
+    objc_msgSend(per, @selector(sayMessage:),@"我也会说hello");
+    // 多个参数方法的消息发送
+    objc_msgSend(per, @selector(sayMessage:WithBool:),@"我要说话",NO);
+}
 
+- (void)otherTest{
+    Person *per = objc_msgSend(objc_msgSend(objc_getClass("Person"), sel_registerName("alloc")), sel_registerName("init"));
+    objc_msgSend(per,sel_registerName("sayHello"));
     /*
-     Runtime的作用：
-     * 动态添加方法（KVO中，监听数组）；
-     ** 动态生成类（KVO机制中？系统动态为我们生成了一个中间类，帮助我们完成观察者对象和被观察对象数据的传递）；
-     *** 动态获取每个类中的属性名和实例变量名
+     objc_getClass("Person")表示获得类对象，等同于[Person class]
+     sel_registerName("alloc")表示注册一个方法，等同于@selector(alloc)
      */
-    // 参数一：获取哪个类中的实例变量  参数二：该类中实例变量的个数
-    unsigned int count = 1; // 声明存储实例变量个数的变量
-    Ivar *ivarList = class_copyIvarList([Person class], &count);
-    // 获取数组中的实例变量名
-    for (int i = 0; i < count ; i++) {
-        Ivar ivar = ivarList[i];  //获取数组中对应位置的ivar
-        // 获取ivar的名字
-        const char *cStr = ivar_getName(ivar);
-        // 转化为OC的字符串
-        NSString *OCStr = [[NSString alloc]initWithCString:cStr encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",OCStr);
-    }
+}
 
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)goToNextBtn {
+    ExchangeViewController *exchangeVC = [[ExchangeViewController alloc]init];
+    [self.navigationController pushViewController:exchangeVC animated:NO];
 }
 
 

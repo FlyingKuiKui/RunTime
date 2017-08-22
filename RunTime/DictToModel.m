@@ -8,7 +8,9 @@
 
 #import "DictToModel.h"
 #import <objc/message.h>
-
+/*
+ 字典转化为模型
+ */
 @implementation DictToModel
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary{
     id model = [[self alloc] init];

@@ -30,7 +30,7 @@
     Method method2 = class_getInstanceMethod(self, @selector(sayTwo));
     method_exchangeImplementations(method1, method2);
 }
-// 此方法会调用多次
+// 此方法会调用多次，可以利用多线程中的方法进行调用次数的控制
 /*
 + (void)initialize{
     static dispatch_once_t onceToken;

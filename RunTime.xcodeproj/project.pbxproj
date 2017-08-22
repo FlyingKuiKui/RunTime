@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		741064101F4B064400757473 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410640F1F4B064400757473 /* ExchangeViewController.m */; };
+		741064151F4BBE2C00757473 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 741064141F4BBE2C00757473 /* UIImage+Image.m */; };
+		741064171F4BC0E500757473 /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 741064161F4BC0E500757473 /* one.png */; };
+		7410641A1F4C264C00757473 /* TestDeliverNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 741064191F4C264C00757473 /* TestDeliverNews.m */; };
+		7410641D1F4C32B700757473 /* DictToModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410641C1F4C32B700757473 /* DictToModel.m */; };
 		742BDD211F417BA4003FF30C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 742BDD201F417BA4003FF30C /* main.m */; };
 		742BDD241F417BA4003FF30C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 742BDD231F417BA4003FF30C /* AppDelegate.m */; };
 		742BDD271F417BA4003FF30C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 742BDD261F417BA4003FF30C /* ViewController.m */; };
@@ -39,6 +43,13 @@
 /* Begin PBXFileReference section */
 		7410640E1F4B064400757473 /* ExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeViewController.h; sourceTree = "<group>"; };
 		7410640F1F4B064400757473 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
+		741064131F4BBE2C00757473 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		741064141F4BBE2C00757473 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		741064161F4BC0E500757473 /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
+		741064181F4C264C00757473 /* TestDeliverNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDeliverNews.h; sourceTree = "<group>"; };
+		741064191F4C264C00757473 /* TestDeliverNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDeliverNews.m; sourceTree = "<group>"; };
+		7410641B1F4C32B700757473 /* DictToModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictToModel.h; sourceTree = "<group>"; };
+		7410641C1F4C32B700757473 /* DictToModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictToModel.m; sourceTree = "<group>"; };
 		742BDD1C1F417BA4003FF30C /* RunTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742BDD201F417BA4003FF30C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		742BDD221F417BA4003FF30C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,8 +124,15 @@
 				742BDD261F417BA4003FF30C /* ViewController.m */,
 				7410640E1F4B064400757473 /* ExchangeViewController.h */,
 				7410640F1F4B064400757473 /* ExchangeViewController.m */,
+				741064131F4BBE2C00757473 /* UIImage+Image.h */,
+				741064141F4BBE2C00757473 /* UIImage+Image.m */,
+				741064181F4C264C00757473 /* TestDeliverNews.h */,
+				741064191F4C264C00757473 /* TestDeliverNews.m */,
+				7410641B1F4C32B700757473 /* DictToModel.h */,
+				7410641C1F4C32B700757473 /* DictToModel.m */,
 				742BDD521F431FE1003FF30C /* Person.h */,
 				742BDD531F431FE1003FF30C /* Person.m */,
+				741064161F4BC0E500757473 /* one.png */,
 				742BDD281F417BA4003FF30C /* Main.storyboard */,
 				742BDD2B1F417BA4003FF30C /* Assets.xcassets */,
 				742BDD2D1F417BA4003FF30C /* LaunchScreen.storyboard */,
@@ -259,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				741064171F4BC0E500757473 /* one.png in Resources */,
 				742BDD2F1F417BA4003FF30C /* LaunchScreen.storyboard in Resources */,
 				742BDD2C1F417BA4003FF30C /* Assets.xcassets in Resources */,
 				742BDD2A1F417BA4003FF30C /* Main.storyboard in Resources */,
@@ -286,9 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7410641D1F4C32B700757473 /* DictToModel.m in Sources */,
 				742BDD271F417BA4003FF30C /* ViewController.m in Sources */,
+				7410641A1F4C264C00757473 /* TestDeliverNews.m in Sources */,
 				742BDD241F417BA4003FF30C /* AppDelegate.m in Sources */,
 				742BDD541F431FE1003FF30C /* Person.m in Sources */,
+				741064151F4BBE2C00757473 /* UIImage+Image.m in Sources */,
 				741064101F4B064400757473 /* ExchangeViewController.m in Sources */,
 				742BDD211F417BA4003FF30C /* main.m in Sources */,
 			);

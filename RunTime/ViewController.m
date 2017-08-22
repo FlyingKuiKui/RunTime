@@ -8,25 +8,24 @@
 
 #import "ViewController.h"
 #import "Person.h"
-#import <objc/message.h>  // 导入此框架，验证消息发送机制
+#import <objc/message.h>  // 导入此框架，验证消息发送机制，其内已导入<objc/runtime.h>
 #import "ExchangeViewController.h"
 @interface ViewController ()
 
 @end
-
+/*
+ Runtime是运行时机制，是一套纯C的代码库，是OC的幕后工作者，整个OC的底层，我们编写的OC代码，在程序运行的时候，都经过Runtime机制转译成了C语言代码。
+ Runtime是运行时机制，其中最主要的是消息机制。
+ 对于C语言而言，函数的调用在编译的时候决定调用哪个函数；
+ 而对于OC而言，并不会在编译的时候真正决定调用哪个函数，只有在真正调用的时候，才会根据函数的名称找到对应的函数来调用。
+ 在编译阶段，OC可以调用任何已声明的函数，至于函数是否实现，并不重要。
+ 在编译阶段，C调用未实现的函数，将会报错
+ */
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"----验证消息发送机制-开始----");
-    /*
-        Runtime是运行时机制，是一套纯C的代码库，是OC的幕后工作者，整个OC的底层，我们编写的OC代码，在程序运行的时候，都经过Runtime机制转译成了C语言代码。
-        Runtime是运行时机制，其中最主要的是消息机制。
-        对于C语言而言，函数的调用在编译的时候决定调用哪个函数；
-        而对于OC而言，并不会在编译的时候真正决定调用哪个函数，只有在真正调用的时候，才会根据函数的名称找到对应的函数来调用。
-        在编译阶段，OC可以调用任何已声明的函数，至于函数是否实现，并不重要。
-        在编译阶段，C调用未实现的函数，将会报错
-     */
     
     // OC调用示例：
     [self exampleTransferWithOC];
@@ -34,10 +33,14 @@
     objc_msgSend(self, @selector(exampleTransferWithOC));
     // 该行代码经过runtime就编译成了objc_msgSend(self,@selector(exampleTransferWithOC)); 向self发送exampleTransferWithOC方法
     NSLog(@"------分隔线--------");
+    
+    
     [self exampleTransferWithmsgSend];
     objc_msgSend(self, @selector(exampleTransferWithmsgSend));
     NSLog(@"------分隔线--------");
-    // 验证
+    
+    
+    // 其它验证
     [self otherTest];
     NSLog(@"----验证消息发送机制-结束----");
 }
